@@ -48,6 +48,9 @@ struct BeforeMain {
 };
 const BeforeMain before_main;
 
+// Check that absl::flat_hash_map is constinit.
+constinit absl::flat_hash_map<int,int> constinitHashMap;
+
 template <class K, class V>
 using Map = flat_hash_map<K, V, StatefulTestingHash, StatefulTestingEqual,
                           Alloc<std::pair<const K, V>>>;

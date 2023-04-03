@@ -48,6 +48,9 @@ struct BeforeMain {
 };
 const BeforeMain before_main;
 
+// Check that absl::flat_hash_set is constinit.
+constinit absl::flat_hash_set<int> constinitHashSet;
+
 template <class T>
 using Set =
     absl::flat_hash_set<T, StatefulTestingHash, StatefulTestingEqual, Alloc<T>>;
